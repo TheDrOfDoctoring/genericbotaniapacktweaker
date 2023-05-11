@@ -1,0 +1,2 @@
+These textures are colour shifted versions of the Manasteel tool set from Botania. 
+https://github.com/VazkiiMods/Botania

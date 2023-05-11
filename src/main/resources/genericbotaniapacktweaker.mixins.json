@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.doctor.genericbotaniapacktweaker.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "genericbotaniapacktweaker.refmap.json",
+  "mixins": [
+    "AnimatedMagicArmorMixin",
+    "EndoflameBlockEntityMixin",
+    "EntropinnyumBlockEntityMixin",
+    "MobFarmBlockEntityMixin"
+  ],
+  "client": [
+  ],
+  "minVersion": "0.8"
+}
