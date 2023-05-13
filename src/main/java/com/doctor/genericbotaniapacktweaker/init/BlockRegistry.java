@@ -21,6 +21,6 @@ public class BlockRegistry {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, GenericBotaniaPackTweaker.MODID);
 
-    public static final RegistryObject<ForgeSpecialFlowerBlock> dieselLotus = BLOCKS.register("diesellotus", () -> new ForgeSpecialFlowerBlock(MobEffects.ABSORPTION, 100, BlockBehaviour.Properties.copy(Blocks.POPPY), BlockEntityRegistry.DIESELLOTUS::get));
-    public static final RegistryObject<FloatingSpecialFlowerBlock> dieselLotusFloating = BLOCKS.register("diesellotus_floating", () -> new FloatingSpecialFlowerBlock(BotaniaBlocks.FLOATING_PROPS, BlockEntityRegistry.DIESELLOTUS::get));
+    public static final RegistryObject<ForgeSpecialFlowerBlock> dieselotus = BLOCKS.register("dieselotus", () -> new ForgeSpecialFlowerBlock(MobEffects.ABSORPTION, 100, BlockBehaviour.Properties.copy(Blocks.POPPY), BlockEntityRegistry.DIESELLOTUS::get));
+    public static final RegistryObject<FloatingSpecialFlowerBlock> dieselotusFloating = BLOCKS.register("dieselotus_floating", () -> new FloatingSpecialFlowerBlock(BotaniaBlocks.FLOATING_PROPS, () -> BlockEntityRegistry.DIESELLOTUS.get()));
 }

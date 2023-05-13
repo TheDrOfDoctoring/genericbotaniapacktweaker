@@ -17,7 +17,7 @@ import java.util.function.BiConsumer;
 public class BlockEntityRegistry {
 
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPE = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, GenericBotaniaPackTweaker.MODID);
-    public static final RegistryObject<BlockEntityType<DieselotusBlockEntity>> DIESELLOTUS = BLOCK_ENTITY_TYPE.register("diesellotus", () -> create(DieselotusBlockEntity::new, BlockRegistry.dieselLotusFloating.get(), BlockRegistry.dieselLotus.get()));
+    public static final RegistryObject<BlockEntityType<DieselotusBlockEntity>> DIESELLOTUS = BLOCK_ENTITY_TYPE.register("dieselotus", () -> create(DieselotusBlockEntity::new, BlockRegistry.dieselotusFloating.get(), BlockRegistry.dieselotus.get()));
 
     private static <T extends BlockEntity> BlockEntityType<T> create(BlockEntityType.BlockEntitySupplier<T> factory, Block... blocks) {
         return BlockEntityType.Builder.of(factory, blocks).build(null);

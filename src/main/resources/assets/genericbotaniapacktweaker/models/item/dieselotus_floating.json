@@ -1,8 +1,7 @@
 {
   "parent": "minecraft:block/block",
-  "render_type": "cutout",
   "flower": {
-    "parent": "genericbotaniapacktweaker:block/diesellotus"
+    "parent": "genericbotaniapacktweaker:block/dieselotus"
   },
   "loader": "botania:floating_flower"
-}
+} 

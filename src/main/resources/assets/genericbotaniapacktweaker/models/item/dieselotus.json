@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "genericbotaniapacktweaker:block/diesellotus"
+    "layer0": "genericbotaniapacktweaker:block/dieselotus"
   }
 }

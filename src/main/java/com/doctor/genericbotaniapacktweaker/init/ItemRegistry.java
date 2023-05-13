@@ -17,6 +17,6 @@ public class ItemRegistry {
     public static final RegistryObject<ManaelectrumAxeItem> MANAELECTRUM_AXE = ITEMS.register("manaelectrum_axe", () -> new ManaelectrumAxeItem(Tiers.GOLD, 6.0F, -3.0F, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final RegistryObject<ManaelectrumSwordItem> MANAELECTRUM_SWORD = ITEMS.register("manaelectrum_sword", () -> new ManaelectrumSwordItem(Tiers.GOLD, 3, -2.4F, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final RegistryObject<ManaelectrumHoeItem> MANAELECTRUM_HOE = ITEMS.register("manaelectrum_hoe", () -> new ManaelectrumHoeItem(Tiers.GOLD, 0, -3.0F,new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-    public static final RegistryObject<BlockItem> DIESELLOTUS_FLOATING_ITEM = ITEMS.register("diesellotus_floating", () -> new BlockItem(BlockRegistry.dieselLotusFloating.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-    public static final RegistryObject<BlockItem> DIESELLOTUS_ITEM = ITEMS.register("diesellotus", () -> new BlockItem(BlockRegistry.dieselLotus.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<BlockItem> DIESELOTUS_FLOATING_ITEM = ITEMS.register("dieselotus_floating", () -> new BlockItem(BlockRegistry.dieselotusFloating.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<BlockItem> DIESELOTUS_ITEM = ITEMS.register("dieselotus", () -> new BlockItem(BlockRegistry.dieselotus.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 }
