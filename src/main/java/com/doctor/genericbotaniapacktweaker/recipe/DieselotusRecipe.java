@@ -41,7 +41,10 @@ public class DieselotusRecipe implements IDieselotusRecipe {
 
     @Override
     public boolean matches(Level world, BlockPos pos, BlockState state, SpecialFlowerBlockEntity be) {
-        return this.input.test(state);
+        if(world.getFluidState(pos).isSource()) {
+            return this.input.test(state);
+        }
+        return false;
     }
 
     @Override

@@ -2,10 +2,7 @@ package com.doctor.genericbotaniapacktweaker;
 
 import com.doctor.genericbotaniapacktweaker.client.ClientRegistryHandler;
 import com.doctor.genericbotaniapacktweaker.data.BlockTagProvider;
-import com.doctor.genericbotaniapacktweaker.init.BlockEntityRegistry;
-import com.doctor.genericbotaniapacktweaker.init.BlockRegistry;
-import com.doctor.genericbotaniapacktweaker.init.ItemRegistry;
-import com.doctor.genericbotaniapacktweaker.init.RecipeRegistry;
+import com.doctor.genericbotaniapacktweaker.init.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.api.distmarker.Dist;
@@ -29,8 +26,9 @@ public class GenericBotaniaPackTweaker
     public GenericBotaniaPackTweaker() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::gatherData);
-        modEventBus.addListener(this::commonSetup);
+
         ItemRegistry.ITEMS.register(modEventBus);
+        GlyphRegistry.registerGlyphs();
         RecipeRegistry.RECIPE_TYPES.register(modEventBus);
         RecipeRegistry.RECIPE_SERIALIZERS.register(modEventBus);
         BlockRegistry.BLOCKS.register(modEventBus);
@@ -39,15 +37,11 @@ public class GenericBotaniaPackTweaker
 
         DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> ClientRegistryHandler::init);
     }
-
-    private void commonSetup(final FMLCommonSetupEvent event) {
-
-    }
-
     private void gatherData(final GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         generator.addProvider(event.includeServer(), new BlockTagProvider(generator, event.getExistingFileHelper()));
     }
+
 
 
 

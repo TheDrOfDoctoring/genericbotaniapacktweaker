@@ -28,9 +28,11 @@ public abstract class AnimatedMagicArmorMixin  extends ArmorItem implements IMan
     @Redirect(method = "getAttributeModifiers", at = @At(value = "INVOKE", target = "Lcom/hollingsworth/arsnouveau/api/perk/IPerkHolder;getTier()I"), remap = false)
     public int getAttributeModifiers(IPerkHolder perkholder) {
         int result;
-        if (material == Materials.MEDIUM) {
+        if (material == Materials.LIGHT) {
+            result = perkholder.getTier();
+        } else if (material == Materials.MEDIUM) {
             result = perkholder.getTier() + 1;
-        } else if (material == Materials.HEAVY) {
+        } else if (material == Materials.HEAVY){
             result = perkholder.getTier() + 2;
         } else {
             result = perkholder.getTier();
