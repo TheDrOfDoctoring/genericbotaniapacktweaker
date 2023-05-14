@@ -42,7 +42,7 @@ public class EffectPebbleSpawn extends AbstractEffect {
         if(world.getBlockState(rayTraceResult.getBlockPos()).getBlock() == Blocks.GRASS_BLOCK) {
             BlockPos pos = rayTraceResult.getBlockPos();
             Item item = BotaniaItems.pebble.asItem();
-            for (int i = 0; i < 15 * (spellStats.getAmpMultiplier() + 1); i++) {
+            for (int i = 0; i < 16 * (spellStats.getAmpMultiplier() + 1); i++) {
                 world.addFreshEntity(new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, item.getDefaultInstance()));
             }
         }
