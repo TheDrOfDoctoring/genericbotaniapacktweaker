@@ -7,7 +7,6 @@
     "AnimatedMagicArmorMixin",
     "EndoflameBlockEntityMixin",
     "EntropinnyumBlockEntityMixin",
-    "FloorItemBlockMixin",
     "ImbuementBlockMixin",
     "MobFarmBlockEntityMixin"
   ],
