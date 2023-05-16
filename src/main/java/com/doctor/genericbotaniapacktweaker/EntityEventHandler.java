@@ -1,5 +1,6 @@
 package com.doctor.genericbotaniapacktweaker;
 
+import com.ninni.twigs.registry.TwigsBlocks;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -10,7 +11,6 @@ import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.moddingplayground.twigs.init.TwigsBlocks;
 
 @Mod.EventBusSubscriber
 public class EntityEventHandler {

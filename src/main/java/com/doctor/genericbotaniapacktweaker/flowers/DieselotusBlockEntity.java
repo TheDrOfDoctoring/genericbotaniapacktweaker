@@ -62,6 +62,7 @@ public class DieselotusBlockEntity extends GeneratingFlowerBlockEntity {
         }
         return null;
     }
+
     public void tickFlower() {
         super.tickFlower();
         if (this.cooldown > 0) {

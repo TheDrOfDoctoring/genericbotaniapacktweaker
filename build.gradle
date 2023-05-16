@@ -168,7 +168,7 @@ dependencies {
     implementation fg.deobf("curse.maven:mobfarm-563464:4435556")
     implementation fg.deobf("curse.maven:material-541620:4276976")
     implementation fg.deobf("curse.maven:ae2-223794:4293558")
-    implementation fg.deobf("curse.maven:twigs-496913:4160178")
+    implementation fg.deobf("curse.maven:twigs-496913:4533061")
 
     // Examples using mod jars from ./libs
     // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}
