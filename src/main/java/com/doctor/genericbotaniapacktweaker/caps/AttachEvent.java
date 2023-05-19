@@ -47,7 +47,7 @@ public class AttachEvent {
 
                 @Override
                 public int getCurrentMana() {
-                    return be.getSource() * 5;
+                    return be.getSource() * 10;
                 }
 
                 @Override
@@ -57,7 +57,7 @@ public class AttachEvent {
 
                 @Override
                 public void receiveMana(int i) {
-                    be.addSource(i / 5);
+                    be.addSource(i / 10);
                 }
 
                 @Override

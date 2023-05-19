@@ -8,6 +8,7 @@
     "EndoflameBlockEntityMixin",
     "EntropinnyumBlockEntityMixin",
     "ImbuementBlockMixin",
+    "MageBloomCropMixin",
     "MobFarmBlockEntityMixin"
   ],
   "client": [
