@@ -54,7 +54,10 @@ public class SpineretteBlockEntity extends FunctionalFlowerBlockEntity {
             }
             if(this.ticksExisted % 20 == 0 && this.bindPos != Bound.UNBOUND_POS) {
                 ManaMotorBlockEntity mm = (ManaMotorBlockEntity) level.getBlockEntity(bindPos);
-                mm.updateSpeed = true;
+                if(mm != null) {
+                    mm.updateSpeed = true;
+                }
+
             }
             if(soil == Blocks.ROOTED_DIRT) {
                 this.rpm = 16;

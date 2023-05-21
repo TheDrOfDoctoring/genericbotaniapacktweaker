@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "genericbotaniapacktweaker:block/imbued_dirt"
-  }
+  "parent": "genericbotaniapacktweaker:block/imbued_dirt"
 }
