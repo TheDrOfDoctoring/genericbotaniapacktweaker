@@ -4,6 +4,7 @@ import appeng.api.config.Actionable;
 import appeng.blockentity.networking.EnergyCellBlockEntity;
 import com.doctor.genericbotaniapacktweaker.GenericBotaniaPackTweaker;
 import com.doctor.genericbotaniapacktweaker.flowers.DieselotusBlockEntity;
+import com.doctor.genericbotaniapacktweaker.flowers.SpineretteBlockEntity;
 import com.hollingsworth.arsnouveau.common.block.tile.SourceJarTile;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -19,6 +20,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import vazkii.botania.api.BotaniaForgeCapabilities;
 import vazkii.botania.api.BotaniaForgeClientCapabilities;
+import vazkii.botania.api.block_entity.FunctionalFlowerBlockEntity;
 import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.api.mana.ManaCollector;
 import vazkii.botania.api.mana.ManaItemHandler;
@@ -109,7 +111,9 @@ public class AttachEvent {
         if (event.getObject() instanceof DieselotusBlockEntity dieselotusBlockEntity) {
             event.addCapability(new ResourceLocation(GenericBotaniaPackTweaker.MODID, "wand_hud"),
                     CapabilityUtil.makeProvider(BotaniaForgeClientCapabilities.WAND_HUD, new GeneratingFlowerBlockEntity.GeneratingWandHud<>(dieselotusBlockEntity)));
-
+        } else if (event.getObject() instanceof SpineretteBlockEntity spineretteBlockEntity) {
+            event.addCapability(new ResourceLocation(GenericBotaniaPackTweaker.MODID, "wand_hud"),
+                    CapabilityUtil.makeProvider(BotaniaForgeClientCapabilities.WAND_HUD, new FunctionalFlowerBlockEntity.FunctionalWandHud<>(spineretteBlockEntity)));
         }
     }
 

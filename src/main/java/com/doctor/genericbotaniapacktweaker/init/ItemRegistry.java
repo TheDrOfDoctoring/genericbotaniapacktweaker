@@ -19,4 +19,8 @@ public class ItemRegistry {
     public static final RegistryObject<ManaelectrumHoeItem> MANAELECTRUM_HOE = ITEMS.register("manaelectrum_hoe", () -> new ManaelectrumHoeItem(Tiers.GOLD, 0, -3.0F,new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final RegistryObject<BlockItem> DIESELOTUS_FLOATING_ITEM = ITEMS.register("dieselotus_floating", () -> new BlockItem(BlockRegistry.dieselotusFloating.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final RegistryObject<BlockItem> DIESELOTUS_ITEM = ITEMS.register("dieselotus", () -> new BlockItem(BlockRegistry.dieselotus.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<BlockItem> SPINERETTE_FLOATING_ITEM = ITEMS.register("spinerette_floating", () -> new BlockItem(BlockRegistry.spineretteFloating.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<BlockItem> SPINERETTE_ITEM = ITEMS.register("spinerette", () -> new BlockItem(BlockRegistry.spinerette.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<BlockItem> MANA_MOTOR_ITEM = ITEMS.register("mana_motor", () -> new BlockItem(BlockRegistry.manaMotor.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<BlockItem> IMBUED_DIRT = ITEMS.register("imbued_dirt", () -> new BlockItem(BlockRegistry.imbuedDirt.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 }

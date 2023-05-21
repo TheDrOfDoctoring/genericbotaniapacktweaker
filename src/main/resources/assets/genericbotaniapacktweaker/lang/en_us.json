@@ -6,6 +6,10 @@
   "item.genericbotaniapacktweaker.manaelectrum_shovel": "Manaelectrum Shovel",
   "block.genericbotaniapacktweaker.dieselotus": "Dieselotus",
   "block.genericbotaniapacktweaker.dieselotus_floating": "Floating Dieselotus",
+  "block.genericbotaniapacktweaker.spinerette": "Spinerette",
+  "block.genericbotaniapacktweaker.mana_motor": "Mana Motor",
+  "block.genericbotaniapacktweaker.spinerette_floating": "Floating Spinerette",
+  "block.genericbotaniapacktweaker.imbued_dirt": "Imbued Dirt",
   "genericbotaniapacktweaker.glyph_name.glyph_pebble": "Pebblespawn",
   "genericbotaniapacktweaker.glyph_desc.glylph_pebble": "Cast on a Grass Block in order to gain a number of pebbles"
 }

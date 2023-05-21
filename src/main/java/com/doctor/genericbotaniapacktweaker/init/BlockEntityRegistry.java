@@ -1,7 +1,9 @@
 package com.doctor.genericbotaniapacktweaker.init;
 
 import com.doctor.genericbotaniapacktweaker.GenericBotaniaPackTweaker;
+import com.doctor.genericbotaniapacktweaker.block.entity.ManaMotorBlockEntity;
 import com.doctor.genericbotaniapacktweaker.flowers.DieselotusBlockEntity;
+import com.doctor.genericbotaniapacktweaker.flowers.SpineretteBlockEntity;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -17,6 +19,9 @@ import java.util.function.BiConsumer;
 public class BlockEntityRegistry {
 
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPE = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, GenericBotaniaPackTweaker.MODID);
+    public static final RegistryObject<BlockEntityType<ManaMotorBlockEntity>> MANAMOTOR = BLOCK_ENTITY_TYPE.register("mana_motor", () -> create(ManaMotorBlockEntity::new, BlockRegistry.manaMotor.get()));
+
+    public static final RegistryObject<BlockEntityType<SpineretteBlockEntity>> SPINERETTE = BLOCK_ENTITY_TYPE.register("spinerette", () -> create(SpineretteBlockEntity::new, BlockRegistry.spineretteFloating.get(), BlockRegistry.spinerette.get()));
     public static final RegistryObject<BlockEntityType<DieselotusBlockEntity>> DIESELLOTUS = BLOCK_ENTITY_TYPE.register("dieselotus", () -> create(DieselotusBlockEntity::new, BlockRegistry.dieselotusFloating.get(), BlockRegistry.dieselotus.get()));
 
     private static <T extends BlockEntity> BlockEntityType<T> create(BlockEntityType.BlockEntitySupplier<T> factory, Block... blocks) {

@@ -13,9 +13,9 @@ public class BlockTagProvider extends BlockTagsProvider {
     }
     @Override
     protected void addTags() {
-        tag(BotaniaTags.Blocks.GENERATING_SPECIAL_FLOWERS).add(BlockRegistry.dieselotus.get());
-        tag(BotaniaTags.Blocks.SPECIAL_FLOATING_FLOWERS).add(BlockRegistry.dieselotusFloating.get());
-        tag(BotaniaTags.Blocks.FLOATING_FLOWERS).add(BlockRegistry.dieselotusFloating.get());
+        tag(BotaniaTags.Blocks.GENERATING_SPECIAL_FLOWERS).add(BlockRegistry.dieselotus.get()).add(BlockRegistry.spinerette.get());
+        tag(BotaniaTags.Blocks.SPECIAL_FLOATING_FLOWERS).add(BlockRegistry.dieselotusFloating.get()).add(BlockRegistry.spineretteFloating.get());
+        tag(BotaniaTags.Blocks.FLOATING_FLOWERS).add(BlockRegistry.dieselotusFloating.get()).add(BlockRegistry.spineretteFloating.get());
 
     }
 }
