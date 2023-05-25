@@ -49,13 +49,13 @@ public class SpineretteBlockEntity extends FunctionalFlowerBlockEntity {
         super.tickFlower();
         if(this.ticksExisted % 4 == 0 && !this.level.isClientSide && this.getMana() > 0 ) {
             Block soil = level.getBlockState(this.getBlockPos().below()).getBlock();
-            if(this.bindPos != Bound.UNBOUND_POS) {
-                this.addMana(-4);
+            if(this.bindPos.getY() != Integer.MIN_VALUE) {
+                this.addMana(-2);
             }
             if(this.ticksExisted % 20 == 0 && this.bindPos != Bound.UNBOUND_POS) {
                 ManaMotorBlockEntity mm = (ManaMotorBlockEntity) level.getBlockEntity(bindPos);
                 if(mm != null) {
-                    mm.updateSpeed = true;
+                    mm.updateGeneratedRotation();
                 }
 
             }
@@ -69,6 +69,12 @@ public class SpineretteBlockEntity extends FunctionalFlowerBlockEntity {
                 this.rpm = 128;
             } else {
                 this.rpm = 8;
+            }
+            if(this.getMana() == 0) {
+                this.rpm = 0;
+                if(this.bindPos.getY() != Integer.MIN_VALUE && level.getBlockEntity(this.bindPos) instanceof ManaMotorBlockEntity be) {
+                    be.updateGeneratedRotation();
+                }
             }
 
         }

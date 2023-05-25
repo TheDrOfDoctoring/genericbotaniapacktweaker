@@ -94,7 +94,7 @@ public class ManaMotorBlockEntity extends GeneratingKineticTileEntity {
             }
         }
     }
-    public float getRPM() {
+        public float getRPM() {
         float rpm = 0.0f;
             for (BlockPos boundFlower : boundFlowers) {
                 if (boundFlower != Bound.UNBOUND_POS && this.level.getBlockEntity(boundFlower) instanceof SpineretteBlockEntity) {
