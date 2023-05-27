@@ -1,5 +1,6 @@
 package com.doctor.genericbotaniapacktweaker.mixin;
 
+import alexthw.ars_elemental.common.items.armor.AAMaterials;
 import com.hollingsworth.arsnouveau.api.client.IVariantColorProvider;
 import com.hollingsworth.arsnouveau.api.mana.IManaEquipment;
 import com.hollingsworth.arsnouveau.api.perk.IPerkHolder;
@@ -32,7 +33,7 @@ public abstract class AnimatedMagicArmorMixin  extends ArmorItem implements IMan
             result = perkholder.getTier();
         } else if (material == Materials.MEDIUM) {
             result = perkholder.getTier() + 1;
-        } else if (material == Materials.HEAVY){
+        } else if (material == Materials.HEAVY || material == AAMaterials.air || material == AAMaterials.earth || material == AAMaterials.fire || material == AAMaterials.water){
             result = perkholder.getTier() + 2;
         } else {
             result = perkholder.getTier();

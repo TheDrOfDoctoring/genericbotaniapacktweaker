@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 
 public class ManaelectrumAxeItem extends AxeItem implements CustomDamageItem, SortableTool {
 
-    private static final int MANA_PER_DAMAGE = 45;
+    private static final int MANA_PER_DAMAGE = 75;
 
     public ManaelectrumAxeItem(Tier tier, float thing1, float thing2, Item.Properties properties) {
         super(tier, thing1, thing2, properties);

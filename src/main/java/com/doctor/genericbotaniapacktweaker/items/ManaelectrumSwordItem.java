@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 //THIS IS ALL ESSENTIALLY JUST MANASTEEL TOOLS
 public class ManaelectrumSwordItem extends SwordItem implements CustomDamageItem, SortableTool {
 
-    private static final int MANA_PER_DAMAGE = 45;
+    private static final int MANA_PER_DAMAGE = 75;
 
     public ManaelectrumSwordItem(Tier tier, int thing1, float thing2, Item.Properties properties) {
         super(tier, thing1, thing2, properties);

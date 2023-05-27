@@ -172,6 +172,7 @@ dependencies {
     implementation fg.deobf("curse.maven:flywheel-486392:4341471")
     implementation fg.deobf("curse.maven:twigs-496913:4533061")
     implementation fg.deobf("curse.maven:delight-398521:4525646")
+    implementation fg.deobf("curse.maven:elemental-561470:4546199")
 
 
     // Examples using mod jars from ./libs
