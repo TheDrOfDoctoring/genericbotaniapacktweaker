@@ -5,11 +5,13 @@
   "refmap": "genericbotaniapacktweaker.refmap.json",
   "mixins": [
     "AnimatedMagicArmorMixin",
+    "EnchantingApparatusTileMixin",
     "EndoflameBlockEntityMixin",
     "EntropinnyumBlockEntityMixin",
     "ImbuementBlockMixin",
     "MageBloomCropMixin",
-    "MobFarmBlockEntityMixin"
+    "MobFarmBlockEntityMixin",
+    "OrechidIgnemMixin"
   ],
   "client": [
   ],

@@ -1,9 +1,11 @@
 package com.doctor.genericbotaniapacktweaker.client;
 
+import com.doctor.genericbotaniapacktweaker.block.entity.FastArcaneCoreRenderer;
 import com.doctor.genericbotaniapacktweaker.block.entity.ManaMotorBlockEntity;
 import com.doctor.genericbotaniapacktweaker.block.entity.ManaMotorRenderer;
 import com.doctor.genericbotaniapacktweaker.init.BlockEntityRegistry;
 import com.doctor.genericbotaniapacktweaker.init.BlockRegistry;
+import com.hollingsworth.arsnouveau.client.renderer.tile.ArcaneCoreRenderer;
 import com.jozufozu.flywheel.api.MaterialManager;
 import com.jozufozu.flywheel.backend.instancing.InstancedRenderRegistry;
 import com.jozufozu.flywheel.backend.instancing.blockentity.BlockEntityInstance;
@@ -38,11 +40,13 @@ public class ClientRegistry {
         r.accept(BlockRegistry.dieselotusFloating.get(), cutout);
         r.accept(BlockRegistry.spinerette.get(), cutout);
         r.accept(BlockRegistry.spineretteFloating.get(), cutout);
+        r.accept(BlockRegistry.fastArcane.get(), cutout);
     }
     static void registerBlockEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(BlockEntityRegistry.DIESELLOTUS.get(), SpecialFlowerBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(BlockEntityRegistry.SPINERETTE.get(), SpecialFlowerBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(BlockEntityRegistry.MANAMOTOR.get(), ManaMotorRenderer::new);
+        event.registerBlockEntityRenderer(BlockEntityRegistry.FAST_CORE.get(), FastArcaneCoreRenderer::new);
     }
 
     static void registerInstance(FMLClientSetupEvent event) {

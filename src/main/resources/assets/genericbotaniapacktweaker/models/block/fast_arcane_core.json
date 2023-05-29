@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "genericbotaniapacktweaker:block/fast_arcane_core"
+  },
+  "render_type": "cutout"
+}

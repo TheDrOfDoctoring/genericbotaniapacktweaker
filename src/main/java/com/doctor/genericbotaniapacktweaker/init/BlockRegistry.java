@@ -1,6 +1,7 @@
 package com.doctor.genericbotaniapacktweaker.init;
 
 import com.doctor.genericbotaniapacktweaker.GenericBotaniaPackTweaker;
+import com.doctor.genericbotaniapacktweaker.block.FastArcaneCore;
 import com.doctor.genericbotaniapacktweaker.block.ImbuedDirtBlock;
 import com.doctor.genericbotaniapacktweaker.block.ManaMotor;
 import com.doctor.genericbotaniapacktweaker.flowers.DieselotusBlockEntity;
@@ -32,4 +33,5 @@ public class BlockRegistry {
 
     public static final RegistryObject<ForgeSpecialFlowerBlock> dieselotus = BLOCKS.register("dieselotus", () -> new ForgeSpecialFlowerBlock(MobEffects.ABSORPTION, 100, BlockBehaviour.Properties.copy(Blocks.POPPY), BlockEntityRegistry.DIESELLOTUS::get));
     public static final RegistryObject<FloatingSpecialFlowerBlock> dieselotusFloating = BLOCKS.register("dieselotus_floating", () -> new FloatingSpecialFlowerBlock(BotaniaBlocks.FLOATING_PROPS, BlockEntityRegistry.DIESELLOTUS::get));
+    public static final RegistryObject<FastArcaneCore> fastArcane = BLOCKS.register("fast_arcane_core", FastArcaneCore::new);
 }
