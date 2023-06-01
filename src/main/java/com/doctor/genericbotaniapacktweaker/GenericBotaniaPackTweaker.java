@@ -2,9 +2,11 @@ package com.doctor.genericbotaniapacktweaker;
 
 import com.doctor.genericbotaniapacktweaker.client.ClientRegistryHandler;
 import com.doctor.genericbotaniapacktweaker.data.BlockTagProvider;
+import com.doctor.genericbotaniapacktweaker.data.ItemTagProvider;
 import com.doctor.genericbotaniapacktweaker.init.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -40,7 +42,10 @@ public class GenericBotaniaPackTweaker
     }
     private void gatherData(final GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
-        generator.addProvider(event.includeServer(), new BlockTagProvider(generator, event.getExistingFileHelper()));
+        BlockTagsProvider blockProvider = new BlockTagProvider(generator, event.getExistingFileHelper());
+
+        generator.addProvider(event.includeServer(), blockProvider);
+        generator.addProvider(event.includeServer(), new ItemTagProvider(generator, blockProvider, GenericBotaniaPackTweaker.MODID, event.getExistingFileHelper()));
     }
 
 
