@@ -5,8 +5,7 @@ import com.doctor.genericbotaniapacktweaker.flowers.SpineretteBlockEntity;
 import com.doctor.genericbotaniapacktweaker.init.BlockEntityRegistry;
 import com.doctor.genericbotaniapacktweaker.init.BlockRegistry;
 import com.simibubi.create.AllBlocks;
-import com.simibubi.create.content.contraptions.base.GeneratingKineticTileEntity;
-import com.simibubi.create.content.contraptions.components.motor.CreativeMotorBlock;
+import com.simibubi.create.content.kinetics.base.GeneratingKineticBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -15,9 +14,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import vazkii.botania.api.block.Bound;
 
-import static com.simibubi.create.content.contraptions.relays.gauge.GaugeBlock.Type.STRESS;
 
-public class ManaMotorBlockEntity extends GeneratingKineticTileEntity {
+public class ManaMotorBlockEntity extends GeneratingKineticBlockEntity {
     public ManaMotorBlockEntity(BlockPos pos, BlockState state) {
         super(BlockEntityRegistry.MANAMOTOR.get(), pos, state);
         setLazyTickRate(20);

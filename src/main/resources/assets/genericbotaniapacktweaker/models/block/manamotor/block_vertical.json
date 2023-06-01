@@ -6,7 +6,7 @@
     "6": "genericbotaniapacktweaker:block/mana_motor",
     "7": "create:block/gearbox",
     "8": "block/polished_andesite",
-    "9": "create:block/andesite_bricks",
+    "9": "create:block/andesite_block",
     "particle": "#5"
   },
   "elements": [

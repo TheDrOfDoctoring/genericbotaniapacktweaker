@@ -2,8 +2,8 @@ package com.doctor.genericbotaniapacktweaker.block;
 
 import com.doctor.genericbotaniapacktweaker.block.entity.ManaMotorBlockEntity;
 import com.doctor.genericbotaniapacktweaker.init.BlockEntityRegistry;
-import com.simibubi.create.content.contraptions.base.DirectionalKineticBlock;
-import com.simibubi.create.foundation.block.ITE;
+import com.simibubi.create.content.kinetics.base.DirectionalKineticBlock;
+import com.simibubi.create.foundation.block.IBE;
 import com.simibubi.create.foundation.utility.VoxelShaper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -24,7 +24,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.Random;
 
-public class ManaMotor extends DirectionalKineticBlock implements ITE<ManaMotorBlockEntity> {
+public class ManaMotor extends DirectionalKineticBlock implements IBE<ManaMotorBlockEntity> {
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
     public ManaMotor(Properties properties) {
         super(properties);
@@ -43,14 +43,7 @@ public class ManaMotor extends DirectionalKineticBlock implements ITE<ManaMotorB
             return super.getStateForPlacement(context);
         return defaultBlockState().setValue(FACING, preferred);
     }
-    @Override
-    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return BlockEntityRegistry.MANAMOTOR.get().create(pos, state);
-    }
-    @Override
-    public Class<ManaMotorBlockEntity> getTileEntityClass() {
-        return ManaMotorBlockEntity.class;
-    }
+
     @Override
     public boolean hasShaftTowards(LevelReader world, BlockPos pos, BlockState state, Direction face) {
         return face == state.getValue(FACING);
@@ -74,10 +67,6 @@ public class ManaMotor extends DirectionalKineticBlock implements ITE<ManaMotorB
         return true;
     }
 
-    @Override
-    public BlockEntityType<? extends ManaMotorBlockEntity> getTileEntityType() {
-        return BlockEntityRegistry.MANAMOTOR.get();
-    }
 
     public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, BlockPos from, boolean b) {
         if (!world.isClientSide) {
@@ -98,5 +87,15 @@ public class ManaMotor extends DirectionalKineticBlock implements ITE<ManaMotorB
     public void tick(BlockState state, ServerLevel world, BlockPos pos, Random random) {
         if (state.getValue(POWERED) && !world.hasNeighborSignal(pos))
             world.setBlock(pos, state.cycle(POWERED), 2);
+    }
+
+    @Override
+    public Class<ManaMotorBlockEntity> getBlockEntityClass() {
+        return ManaMotorBlockEntity.class;
+    }
+
+    @Override
+    public BlockEntityType<? extends ManaMotorBlockEntity> getBlockEntityType() {
+        return BlockEntityRegistry.MANAMOTOR.get();
     }
 }

@@ -35,7 +35,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class DieselotusBlockEntity extends GeneratingFlowerBlockEntity {
-    //basically just a mix of the fluid generator be and the thermalily
+    //basically just a mix of the fluid generator be, thermalily and pure daisy.
+    //Credit for most of this code goes to Botania and Vazkii as the creator of Botania
     private int burnTime;
     private int cooldown;
     private static final BlockPos[] OFFSETS = new BlockPos[]{new BlockPos(0, 0, 1), new BlockPos(0, 0, -1), new BlockPos(1, 0, 0), new BlockPos(-1, 0, 0), new BlockPos(-1, 0, 1), new BlockPos(-1, 0, -1), new BlockPos(1, 0, 1), new BlockPos(1, 0, -1)};

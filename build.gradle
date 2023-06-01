@@ -168,7 +168,7 @@ dependencies {
     implementation fg.deobf("curse.maven:mobfarm-563464:4435556")
     implementation fg.deobf("curse.maven:material-541620:4276976")
     implementation fg.deobf("curse.maven:ae2-223794:4293558")
-    implementation fg.deobf("curse.maven:create-328085:4371809")
+    implementation fg.deobf("curse.maven:create-328085:4550987")
     implementation fg.deobf("curse.maven:flywheel-486392:4341471")
     implementation fg.deobf("curse.maven:twigs-496913:4533061")
     implementation fg.deobf("curse.maven:delight-398521:4525646")
