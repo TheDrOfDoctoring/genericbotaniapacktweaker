@@ -9,7 +9,7 @@ import vazkii.botania.common.block.flower.generating.EntropinnyumBlockEntity;
 public class EntropinnyumBlockEntityMixin {
     @ModifyConstant(method = "getMaxMana", constant = @Constant(intValue = 6500), remap = false)
     private int mana(int mana) {
-        return 3000;
+        return 4500;
     }
 
 }
