@@ -23,5 +23,6 @@ public class BlockTagProvider extends BlockTagsProvider {
         tag(BotaniaTags.Blocks.SPECIAL_FLOATING_FLOWERS).add(BlockRegistry.dieselotusFloating.get()).add(BlockRegistry.spineretteFloating.get());
         tag(BotaniaTags.Blocks.FLOATING_FLOWERS).add(BlockRegistry.dieselotusFloating.get()).add(BlockRegistry.spineretteFloating.get());
 
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BlockRegistry.manaMotor.get()).add(BlockRegistry.fastArcane.get());
     }
 }

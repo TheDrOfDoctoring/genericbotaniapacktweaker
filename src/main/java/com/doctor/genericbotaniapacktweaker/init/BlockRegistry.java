@@ -7,6 +7,7 @@ import com.doctor.genericbotaniapacktweaker.block.ManaMotor;
 import com.doctor.genericbotaniapacktweaker.flowers.DieselotusBlockEntity;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.foundation.data.SharedProperties;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
