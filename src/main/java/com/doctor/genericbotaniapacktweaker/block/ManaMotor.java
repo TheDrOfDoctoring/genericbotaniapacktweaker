@@ -2,6 +2,7 @@ package com.doctor.genericbotaniapacktweaker.block;
 
 import com.doctor.genericbotaniapacktweaker.block.entity.ManaMotorBlockEntity;
 import com.doctor.genericbotaniapacktweaker.init.BlockEntityRegistry;
+import com.simibubi.create.AllShapes;
 import com.simibubi.create.content.kinetics.base.DirectionalKineticBlock;
 import com.simibubi.create.foundation.block.IBE;
 import com.simibubi.create.foundation.utility.VoxelShaper;
@@ -42,6 +43,9 @@ public class ManaMotor extends DirectionalKineticBlock implements IBE<ManaMotorB
         if ((context.getPlayer() != null && context.getPlayer().isShiftKeyDown()) || preferred == null)
             return super.getStateForPlacement(context);
         return defaultBlockState().setValue(FACING, preferred);
+    }
+    public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
+        return AllShapes.MOTOR_BLOCK.get((Direction)state.getValue(FACING));
     }
 
     @Override

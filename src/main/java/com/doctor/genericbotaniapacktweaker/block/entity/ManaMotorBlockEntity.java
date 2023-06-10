@@ -9,6 +9,8 @@ import com.simibubi.create.content.kinetics.base.GeneratingKineticBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -23,10 +25,10 @@ public class ManaMotorBlockEntity extends GeneratingKineticBlockEntity {
     //im certain there's a better way to do this but i don't know what it is
     private BlockPos[] boundFlowers = {Bound.UNBOUND_POS, Bound.UNBOUND_POS, Bound.UNBOUND_POS, Bound.UNBOUND_POS, Bound.UNBOUND_POS};
     private int numberBoundFlowers = 0;
-    public static final int maxBound = 4;
+    private static final int maxBound = 5;
 
     public boolean canAcceptFlower() {
-        return numberBoundFlowers < 5;
+        return numberBoundFlowers < maxBound;
     }
     public void initialize() {
         super.initialize();
@@ -43,7 +45,6 @@ public class ManaMotorBlockEntity extends GeneratingKineticBlockEntity {
                 this.updateGeneratedRotation();
                 this.updateSpeed = true;
                 this.calculateAddedStressCapacity();
-
             }
         }
     }
@@ -67,15 +68,16 @@ public class ManaMotorBlockEntity extends GeneratingKineticBlockEntity {
     protected void read(CompoundTag compound, boolean clientPacket) {
         super.read(compound, clientPacket);
         if(boundFlowers != null) {
-            for (int i = 0; i < boundFlowers.length; i++) {
-                BlockPos pos = boundFlowers[i];
-                numberBoundFlowers = compound.getInt("BOUND_FLOWERS");
+            ListTag listTag = compound.getList("BOUND_FLOWERS", Tag.TAG_COMPOUND);
+            for (int i = 0; i < listTag.size(); i++) {
+                CompoundTag subTag = listTag.getCompound(i);
                 boundFlowers[i] = new BlockPos(
-                        compound.getInt("TAG_BIND_X" + i),
-                        compound.getInt("TAG_BIND_Y" + i),
-                        compound.getInt("TAG_BIND_Z" + i)
+                        subTag.getInt("TAG_BIND_X"),
+                        subTag.getInt("TAG_BIND_Y"),
+                        subTag.getInt("TAG_BIND_Z")
                 );
             }
+            numberBoundFlowers = compound.getInt("NUMBER_BOUND_FLOWERS");
         }
     }
 
@@ -83,13 +85,18 @@ public class ManaMotorBlockEntity extends GeneratingKineticBlockEntity {
     protected void write(CompoundTag compound, boolean clientPacket) {
         super.write(compound, clientPacket);
         if(boundFlowers != null) {
+
+            ListTag list = new ListTag();
             for (int i = 0; i < boundFlowers.length; i++) {
                 BlockPos pos = boundFlowers[i];
-                compound.putInt("BOUND_FLOWERS", numberBoundFlowers);
-                compound.putInt("TAG_BIND_X" + i, pos.getX());
-                compound.putInt("TAG_BIND_Y" + i, pos.getY());
-                compound.putInt("TAG_BIND_Z" + i, pos.getZ());
+                CompoundTag sub = new CompoundTag();
+                sub.putInt("TAG_BIND_X", pos.getX());
+                sub.putInt("TAG_BIND_Y", pos.getY());
+                sub.putInt("TAG_BIND_Z", pos.getZ());
+                list.add(i, sub);
             }
+            compound.put("BOUND_FLOWERS", list);
+            compound.putInt("NUMBER_BOUND_FLOWERS", numberBoundFlowers);
         }
     }
         public float getRPM() {
@@ -113,13 +120,11 @@ public class ManaMotorBlockEntity extends GeneratingKineticBlockEntity {
     }
     @Override
     public float calculateAddedStressCapacity() {
-        float capacity = Math.round((float) 48 / (numberBoundFlowers * 4 ));
+        float capacity = Math.round((float) 64 / (numberBoundFlowers * 2));
         this.lastCapacityProvided = capacity;
         return capacity;
     }
-    public int getGeneratedStress() {
-        return (int) calculateAddedStressCapacity();
-    }
+
 
 
 

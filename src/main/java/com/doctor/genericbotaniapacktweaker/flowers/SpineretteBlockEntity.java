@@ -33,7 +33,7 @@ public class SpineretteBlockEntity extends FunctionalFlowerBlockEntity {
     }
     @Override
     public int getMaxMana() {
-        return 15000;
+        return 2000;
     }
     @Override
     public int getColor() {
@@ -50,12 +50,16 @@ public class SpineretteBlockEntity extends FunctionalFlowerBlockEntity {
         if(this.ticksExisted % 4 == 0 && !this.level.isClientSide && this.getMana() > 0 ) {
             Block soil = level.getBlockState(this.getBlockPos().below()).getBlock();
             if(this.bindPos.getY() != Integer.MIN_VALUE) {
-                this.addMana(-2);
+                this.addMana(-1);
             }
             if(this.ticksExisted % 20 == 0 && this.bindPos != Bound.UNBOUND_POS) {
                 ManaMotorBlockEntity mm = (ManaMotorBlockEntity) level.getBlockEntity(bindPos);
                 if(mm != null) {
                     mm.updateGeneratedRotation();
+                    mm.updateSpeed = true;
+                    mm.calculateAddedStressCapacity();
+                    mm.setChanged();
+
                 }
 
             }
@@ -74,6 +78,9 @@ public class SpineretteBlockEntity extends FunctionalFlowerBlockEntity {
                 this.rpm = 0;
                 if(this.bindPos.getY() != Integer.MIN_VALUE && level.getBlockEntity(this.bindPos) instanceof ManaMotorBlockEntity be) {
                     be.updateGeneratedRotation();
+                    be.updateSpeed = true;
+                    be.calculateAddedStressCapacity();
+                    be.setChanged();
                 }
             }
 
