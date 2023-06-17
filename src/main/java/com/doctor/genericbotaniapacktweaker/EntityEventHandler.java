@@ -3,13 +3,17 @@ package com.doctor.genericbotaniapacktweaker;
 import com.doctor.genericbotaniapacktweaker.block.entity.ManaMotorBlockEntity;
 import com.doctor.genericbotaniapacktweaker.flowers.SpineretteBlockEntity;
 import com.doctor.genericbotaniapacktweaker.init.BlockRegistry;
+import com.doctor.genericbotaniapacktweaker.init.ItemRegistry;
 import com.hollingsworth.arsnouveau.common.block.ModBlock;
 import com.ninni.twigs.registry.TwigsBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Phantom;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
@@ -26,6 +30,11 @@ public class EntityEventHandler {
 
     @SubscribeEvent
     public static void entityDeath(LivingDeathEvent event) {
+        if(event.getEntity() instanceof Creeper creeper) {
+            if(creeper.getSwelling(1) > 10 && creeper.getSwelling(1) < 30 ) {
+                creeper.spawnAtLocation(ItemRegistry.CREEPER_GLAND.get());
+            }
+        }
         if(event.getEntity().getBlockStateOn().getBlock() == Blocks.STONE) {
             LivingEntity entity = event.getEntity();
             if(!entity.getCommandSenderWorld().isClientSide) {
