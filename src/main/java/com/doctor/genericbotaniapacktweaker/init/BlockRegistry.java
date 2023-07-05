@@ -5,6 +5,8 @@ import com.doctor.genericbotaniapacktweaker.block.FastArcaneCore;
 import com.doctor.genericbotaniapacktweaker.block.ImbuedDirtBlock;
 import com.doctor.genericbotaniapacktweaker.block.ManaMotor;
 import com.doctor.genericbotaniapacktweaker.flowers.DieselotusBlockEntity;
+import com.doctor.genericbotaniapacktweaker.flowers.SpineretteFloatingFlowerBlock;
+import com.doctor.genericbotaniapacktweaker.flowers.SpineretteFlowerBlock;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
@@ -29,8 +31,8 @@ public class BlockRegistry {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, GenericBotaniaPackTweaker.MODID);
     public static final RegistryObject<ImbuedDirtBlock> imbuedDirt = BLOCKS.register("imbued_dirt", () -> new ImbuedDirtBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)));
     public static final RegistryObject<ManaMotor> manaMotor = BLOCKS.register("mana_motor", () -> new ManaMotor(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
-    public static final RegistryObject<ForgeSpecialFlowerBlock> spinerette= BLOCKS.register("spinerette", () -> new ForgeSpecialFlowerBlock(MobEffects.MOVEMENT_SPEED, 100, BlockBehaviour.Properties.copy(Blocks.POPPY), BlockEntityRegistry.SPINERETTE::get));
-    public static final RegistryObject<FloatingSpecialFlowerBlock> spineretteFloating = BLOCKS.register("spinerette_floating", () -> new FloatingSpecialFlowerBlock(BotaniaBlocks.FLOATING_PROPS, BlockEntityRegistry.SPINERETTE::get));
+    public static final RegistryObject<SpineretteFlowerBlock> spinerette= BLOCKS.register("spinerette", () -> new SpineretteFlowerBlock(MobEffects.MOVEMENT_SPEED, 100, BlockBehaviour.Properties.copy(Blocks.POPPY), BlockEntityRegistry.SPINERETTE::get));
+    public static final RegistryObject<SpineretteFloatingFlowerBlock> spineretteFloating = BLOCKS.register("spinerette_floating", () -> new SpineretteFloatingFlowerBlock(BotaniaBlocks.FLOATING_PROPS, BlockEntityRegistry.SPINERETTE::get));
 
     public static final RegistryObject<ForgeSpecialFlowerBlock> dieselotus = BLOCKS.register("dieselotus", () -> new ForgeSpecialFlowerBlock(MobEffects.ABSORPTION, 100, BlockBehaviour.Properties.copy(Blocks.POPPY), BlockEntityRegistry.DIESELLOTUS::get));
     public static final RegistryObject<FloatingSpecialFlowerBlock> dieselotusFloating = BLOCKS.register("dieselotus_floating", () -> new FloatingSpecialFlowerBlock(BotaniaBlocks.FLOATING_PROPS, BlockEntityRegistry.DIESELLOTUS::get));

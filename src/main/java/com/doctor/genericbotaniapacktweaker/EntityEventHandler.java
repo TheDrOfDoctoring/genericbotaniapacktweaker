@@ -49,23 +49,6 @@ public class EntityEventHandler {
             }
         }
     }
-    //is there like, onBlockBroken or something I can override in the flower BE? or a way to check when its being removed that it's not being removed on unload? eitherway this seems to work for now
-    @SubscribeEvent
-    public static void blockBroken(BlockEvent.BreakEvent event) {
-        LevelAccessor level = event.getLevel();
-        if (level.getBlockEntity(event.getPos()) != null && !level.isClientSide()) {
-            BlockEntity be = event.getLevel().getBlockEntity(event.getPos());
-            if(be instanceof SpineretteBlockEntity) {
-                SpineretteBlockEntity spinerette = (SpineretteBlockEntity) be;
-                BlockPos bindPos = spinerette.getBindPos();
-                if(level.getBlockEntity(bindPos) != null && level.getBlockEntity(bindPos) instanceof ManaMotorBlockEntity) {
-                    ManaMotorBlockEntity manaMotorBlockEntity = (ManaMotorBlockEntity) level.getBlockEntity(bindPos);
-                    manaMotorBlockEntity.removeBoundFlower(spinerette.getBlockPos());
-                }
-            }
-
-        }
-    }
     @SubscribeEvent
     public static void bonemealApplied(BonemealEvent event) {
         BlockState block = event.getBlock();
