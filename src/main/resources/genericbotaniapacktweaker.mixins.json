@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "genericbotaniapacktweaker.refmap.json",
   "mixins": [
+    "AbstractEffectMixin",
     "AnimatedMagicArmorMixin",
     "EnchantingApparatusTileMixin",
     "EndoflameBlockEntityMixin",
