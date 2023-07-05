@@ -6,6 +6,7 @@
   "mixins": [
     "AbstractEffectMixin",
     "AnimatedMagicArmorMixin",
+    "BasicSpellTurretMixin",
     "EnchantingApparatusTileMixin",
     "EndoflameBlockEntityMixin",
     "EntropinnyumBlockEntityMixin",

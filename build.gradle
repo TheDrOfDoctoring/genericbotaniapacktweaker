@@ -17,7 +17,7 @@ plugins {
 
 
 apply plugin: 'org.spongepowered.mixin'
-version = '1.0.0'
+version = '1.0.3'
 group = 'com.doctoring.genericbotaniapacktweaker' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'genericbotaniapacktweaker'
 
@@ -162,6 +162,7 @@ dependencies {
     implementation fg.deobf("curse.maven:quark-243121:4420296")
     implementation fg.deobf("curse.maven:autoreglib-250363:4100299")
     implementation fg.deobf("curse.maven:botania-225643:4557912")
+    implementation fg.deobf("curse.maven:artifice-854169:4557233")
     implementation fg.deobf("curse.maven:curios-309927:4398040")
     implementation fg.deobf("curse.maven:patchouli-306770:4031402")
     implementation fg.deobf("curse.maven:nouveau-401955:4512859")
