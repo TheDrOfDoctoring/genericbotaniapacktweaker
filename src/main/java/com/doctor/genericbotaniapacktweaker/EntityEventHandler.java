@@ -40,7 +40,7 @@ public class EntityEventHandler {
     public static void entityDeath(LivingDeathEvent event) {
         if(event.getEntity() instanceof Creeper creeper && !creeper.getCommandSenderWorld().isClientSide) {
             int swelling = ((CreeperAccessor) creeper).getSwell();
-            if(swelling > 5 && swelling < 30 ) {
+            if(swelling > 10 && swelling < 30 ) {
                 creeper.spawnAtLocation(ItemRegistry.CREEPER_GLAND.get());
             }
         }
