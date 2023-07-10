@@ -13,6 +13,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.GrassBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 import vazkii.botania.common.item.BotaniaItems;
@@ -39,7 +40,8 @@ public class EffectPebbleSpawn extends AbstractEffect {
 
     @Override
     public void onResolveBlock(BlockHitResult rayTraceResult, Level world, @NotNull LivingEntity shooter, SpellStats spellStats, SpellContext spellContext, SpellResolver resolver) {
-        if(world.getBlockState(rayTraceResult.getBlockPos()).getBlock() == Blocks.GRASS_BLOCK) {
+        Block block = world.getBlockState(rayTraceResult.getBlockPos()).getBlock();
+        if(block == Blocks.GRASS_BLOCK || block == Blocks.DIRT) {
             BlockPos pos = rayTraceResult.getBlockPos();
             Item item = BotaniaItems.pebble.asItem();
             for (int i = 0; i < 16 * (spellStats.getAmpMultiplier() + 1); i++) {

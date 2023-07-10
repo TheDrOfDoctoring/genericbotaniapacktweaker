@@ -4,6 +4,7 @@ import com.doctor.genericbotaniapacktweaker.block.entity.ManaMotorBlockEntity;
 import com.doctor.genericbotaniapacktweaker.flowers.SpineretteBlockEntity;
 import com.doctor.genericbotaniapacktweaker.init.BlockRegistry;
 import com.doctor.genericbotaniapacktweaker.init.ItemRegistry;
+import com.doctor.genericbotaniapacktweaker.mixin.CreeperAccessor;
 import com.hollingsworth.arsnouveau.common.block.ModBlock;
 import com.ninni.twigs.registry.TwigsBlocks;
 import net.minecraft.core.BlockPos;
@@ -37,8 +38,9 @@ public class EntityEventHandler {
 
     @SubscribeEvent
     public static void entityDeath(LivingDeathEvent event) {
-        if(event.getEntity() instanceof Creeper creeper) {
-            if(creeper.getSwelling(1) > 10 && creeper.getSwelling(1) < 30 ) {
+        if(event.getEntity() instanceof Creeper creeper && !creeper.getCommandSenderWorld().isClientSide) {
+            int swelling = ((CreeperAccessor) creeper).getSwell();
+            if(swelling > 5 && swelling < 30 ) {
                 creeper.spawnAtLocation(ItemRegistry.CREEPER_GLAND.get());
             }
         }
