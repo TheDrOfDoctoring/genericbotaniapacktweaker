@@ -44,11 +44,9 @@ public class EntityEventHandler {
                 creeper.spawnAtLocation(ItemRegistry.CREEPER_GLAND.get());
             }
         }
-        if(event.getEntity().getBlockStateOn().getBlock() == Blocks.STONE) {
+        if(event.getEntity().getBlockStateOn().getBlock() == Blocks.STONE && !event.getEntity().getCommandSenderWorld().isClientSide) {
             LivingEntity entity = event.getEntity();
-            if(!entity.getCommandSenderWorld().isClientSide) {
-                entity.getCommandSenderWorld().setBlock(entity.getOnPos(), TwigsBlocks.BLOODSTONE.get().defaultBlockState(), 3);
-            }
+            entity.getCommandSenderWorld().setBlock(entity.getOnPos(), TwigsBlocks.BLOODSTONE.get().defaultBlockState(), 3);
         }
     }
     @SubscribeEvent

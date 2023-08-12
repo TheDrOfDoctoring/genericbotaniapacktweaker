@@ -120,7 +120,7 @@ public class ManaMotorBlockEntity extends GeneratingKineticBlockEntity {
     }
     @Override
     public float calculateAddedStressCapacity() {
-        float capacity = Math.round((float) 1024 / (numberBoundFlowers * (getRPM() / 8) * 4));
+        float capacity = Math.round((float) 8 * ((getRPM() / numberBoundFlowers) / numberBoundFlowers) / 4);
         this.lastCapacityProvided = capacity;
         return capacity;
     }
