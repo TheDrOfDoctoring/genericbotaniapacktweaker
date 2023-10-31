@@ -29,6 +29,8 @@ public abstract class MobFarmBlockEntityMixin extends MobFarmBlockEntityData  {
             modified = StackHelper.multiplyStack(originalStacks,5);
         } else if(ModBlocks.CREATIVE_MOB_FARM.get() == this.getBlockState().getBlock()) {
             modified = StackHelper.multiplyStack(originalStacks,10);
+        } else {
+            modified = StackHelper.multiplyStack(originalStacks, 1);
         }
         return modified;
     }
