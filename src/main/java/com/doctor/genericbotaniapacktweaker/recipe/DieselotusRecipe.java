@@ -87,8 +87,6 @@ public class DieselotusRecipe implements IDieselotusRecipe {
     }
 
     public static class Serializer extends RecipeSerializerBase<DieselotusRecipe> {
-        public Serializer() {
-        }
 
         public @NotNull DieselotusRecipe fromJson(@NotNull ResourceLocation id, JsonObject object) {
             StateIngredient input = StateIngredientHelper.deserialize(GsonHelper.getAsJsonObject(object, "input"));
@@ -101,6 +99,7 @@ public class DieselotusRecipe implements IDieselotusRecipe {
 
         public void toNetwork(@NotNull FriendlyByteBuf buf, DieselotusRecipe recipe) {
             recipe.input.write(buf);
+            buf.writeVarInt(recipe.burnTime);
         }
 
         public @NotNull DieselotusRecipe fromNetwork(@NotNull ResourceLocation id, @NotNull FriendlyByteBuf buf) {
